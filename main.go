@@ -9,4 +9,6 @@ func main() {
 	fmt.Println(ones)
 
 	fmt.Println(SpinWords("Welcome"))
+
+	fmt.Println(BlackOrWhiteKey(2))
 }

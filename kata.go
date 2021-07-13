@@ -5,6 +5,33 @@ import (
 	"strings"
 )
 
+// https://www.codewars.com/kata/589273272fab865136000108
+func BlackOrWhiteKey(keyPressCount int) string {
+	w, b := "white", "black"
+	keys := map[int]string{
+		1:  w,
+		2:  b,
+		3:  w,
+		4:  w,
+		5:  b,
+		6:  w,
+		7:  b,
+		8:  w,
+		9:  w,
+		10: b,
+		11: w,
+		12: b,
+	}
+	for keyPressCount > 88 {
+		keyPressCount -= 88
+	}
+	for keyPressCount > 12 {
+		keyPressCount -= 12
+	}
+	k := keys[keyPressCount]
+	return k
+}
+
 // https://www.codewars.com/kata/58845748bd5733f1b300001f/train/go
 func RangeBitCount(a, b int) int {
 	ones := 0

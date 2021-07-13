@@ -21,3 +21,12 @@ func TestRangeBitCount(t *testing.T) {
 	}
 
 }
+
+func TestBlackOrWhiteKey(t *testing.T) {
+	if BlackOrWhiteKey(1) != "white" {
+		t.Errorf("1 should be white")
+	}
+	if BlackOrWhiteKey(5) != "black" {
+		t.Errorf("5 should be black")
+	}
+}
