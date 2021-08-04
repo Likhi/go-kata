@@ -1,9 +1,62 @@
-package main
+package kata
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
+
+func FindOutlier(integers []int) int {
+	return 0
+}
+
+func ToCamelCase(s string) string {
+	sep := "_"
+	s = strings.ReplaceAll(s, "-", sep)
+	ss := strings.Split(s, sep)
+	for i, v := range ss {
+		if i != 0 {
+			ss[i] = strings.ToUpper(string(v[0])) + v[1:]
+		}
+	}
+	return strings.Join(ss, "")
+}
+
+func Multiple3And5(number int) int {
+	m := make(map[int]int)
+
+	for i := 1; i < (number * 5); i++ {
+		key := i * 3
+		if (key) < number {
+			m[key] = 1
+		} else {
+			break
+		}
+	}
+
+	for i := 1; i < (number * 5); i++ {
+		key := i * 5
+		if (key) < number {
+			m[key] = 1
+		} else {
+			break
+		}
+	}
+
+	sum := 0
+	for k, _ := range m {
+		sum += k
+	}
+	return sum
+}
+
+func MultiTable(number int) string {
+	result := ""
+	for i := 1; i < 11; i++ {
+		result += strconv.Itoa(i) + " * " + strconv.Itoa(number) + " = " + strconv.Itoa(number*i) + "\n"
+	}
+	return result[:len(result)-1]
+}
 
 // https://www.codewars.com/kata/589273272fab865136000108
 func BlackOrWhiteKey(keyPressCount int) string {

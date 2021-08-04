@@ -2,13 +2,10 @@ package main
 
 import (
 	"fmt"
+
+	"codewars.com/kata"
 )
 
 func main() {
-	ones := RangeBitCount(1, 5)
-	fmt.Println(ones)
-
-	fmt.Println(SpinWords("Welcome"))
-
-	fmt.Println(BlackOrWhiteKey(2))
+	fmt.Println(kata.FindOutlier([]int{3, 4, 5}))
 }
